@@ -158,13 +158,7 @@ public class ProtocolVersion implements Serializable {
      * @since 5.0
      */
     public String format() {
-        final StringBuilder buffer = new StringBuilder();
-        buffer.append(this.protocol);
-        buffer.append('/');
-        buffer.append(this.major);
-        buffer.append('.');
-        buffer.append(this.minor);
-        return buffer.toString();
+        return this.protocol + '/' + this.major + '.' + this.minor;
     }
 
     /**

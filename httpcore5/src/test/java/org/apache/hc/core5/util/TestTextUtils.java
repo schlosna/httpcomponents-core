@@ -30,6 +30,8 @@ package org.apache.hc.core5.util;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.nio.charset.StandardCharsets;
+
 /**
  * Unit tests for {@link TextUtils}.
  *
@@ -65,6 +67,9 @@ public class TestTextUtils {
     public void testToHexString() {
         Assertions.assertEquals("000c2001ff", TextUtils.toHexString(new byte[] { 0, 12, 32, 1 , -1}));
         Assertions.assertNull(TextUtils.toHexString(null));
+        Assertions.assertEquals("", TextUtils.toHexString(new byte[]{}));
+        Assertions.assertEquals("00", TextUtils.toHexString(new byte[]{0}));
+        Assertions.assertEquals("48656c6c6f2c20776f726c6421", TextUtils.toHexString("Hello, world!".getBytes(StandardCharsets.UTF_8)));
     }
 
 }

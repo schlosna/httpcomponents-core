@@ -92,12 +92,7 @@ public class BasicHeader implements Header, Cloneable, Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder buf = new StringBuilder();
-        buf.append(this.getName()).append(": ");
-        if (this.getValue() != null) {
-            buf.append(this.getValue());
-        }
-        return buf.toString();
+        return this.getName() + ": " + Objects.toString(this.getValue(), "");
     }
 
     @Override

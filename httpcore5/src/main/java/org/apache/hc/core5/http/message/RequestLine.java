@@ -81,9 +81,7 @@ public final class RequestLine implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder buf = new StringBuilder();
-        buf.append(this.method).append(" ").append(this.uri).append(" ").append(this.protoversion);
-        return buf.toString();
+        return this.method + ' ' + this.uri + ' ' + this.protoversion;
     }
 
 }

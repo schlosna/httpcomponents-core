@@ -117,9 +117,9 @@ public final class TextUtils {
         if (bytes == null) {
             return null;
         }
-        final StringBuilder buffer = new StringBuilder();
-        for (int i = 0; i < bytes.length; i++) {
-            final int unsignedB = bytes[i] & 0xff;
+        final StringBuilder buffer = new StringBuilder(bytes.length * 2);
+        for (final byte aByte : bytes) {
+            final int unsignedB = aByte & 0xff;
             if (unsignedB < 16) {
                 buffer.append('0');
             }

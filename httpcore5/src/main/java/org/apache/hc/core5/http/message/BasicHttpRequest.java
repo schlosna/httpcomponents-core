@@ -281,7 +281,7 @@ public class BasicHttpRequest extends HeaderGroup implements HttpRequest {
             Args.check(!rawPath.startsWith("//"), "URI path begins with multiple slashes");
             buf.append(rawPath);
         } else {
-            buf.append("/");
+            buf.append('/');
         }
         final String query = requestUri.getRawQuery();
         if (query != null) {
@@ -295,14 +295,14 @@ public class BasicHttpRequest extends HeaderGroup implements HttpRequest {
             buf.append(this.scheme != null ? this.scheme : URIScheme.HTTP.id).append("://");
             buf.append(this.authority.getHostName());
             if (this.authority.getPort() >= 0) {
-                buf.append(":").append(this.authority.getPort());
+                buf.append(':').append(this.authority.getPort());
             }
         }
         if (this.path == null) {
-            buf.append("/");
+            buf.append('/');
         } else {
             if (buf.length() > 0 && !this.path.startsWith("/")) {
-                buf.append("/");
+                buf.append('/');
             }
             buf.append(this.path);
         }
@@ -321,7 +321,7 @@ public class BasicHttpRequest extends HeaderGroup implements HttpRequest {
     @Override
     public String toString() {
         final StringBuilder buf = new StringBuilder();
-        buf.append(method).append(" ");
+        buf.append(method).append(' ');
         assembleRequestUri(buf);
         return buf.toString();
     }

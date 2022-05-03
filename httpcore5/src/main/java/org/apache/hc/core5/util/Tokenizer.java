@@ -83,15 +83,7 @@ public class Tokenizer {
 
         @Override
         public String toString() {
-            final StringBuilder buffer = new StringBuilder();
-            buffer.append('[');
-            buffer.append(this.lowerBound);
-            buffer.append('>');
-            buffer.append(this.pos);
-            buffer.append('>');
-            buffer.append(this.upperBound);
-            buffer.append(']');
-            return buffer.toString();
+            return "[" + this.lowerBound + '>' + this.pos + '>' + this.upperBound + ']';
         }
 
     }

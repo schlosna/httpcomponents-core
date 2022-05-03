@@ -40,15 +40,7 @@ final class HandlerEntry<T> {
 
     @Override
     public String toString() {
-        final StringBuilder builder = new StringBuilder();
-        builder.append("HandlerEntry [hostname=");
-        builder.append(hostname);
-        builder.append(", uriPattern=");
-        builder.append(uriPattern);
-        builder.append(", handler=");
-        builder.append(handler);
-        builder.append("]");
-        return builder.toString();
+        return "HandlerEntry [hostname=" + hostname + ", uriPattern=" + uriPattern + ", handler=" + handler + ']';
     }
 
 }

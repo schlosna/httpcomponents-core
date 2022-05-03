@@ -300,11 +300,7 @@ public final class HttpHost implements NamedEndpoint, Serializable {
      * @return the host URI
      */
     public String toURI() {
-        final StringBuilder buffer = new StringBuilder();
-        buffer.append(this.schemeName);
-        buffer.append("://");
-        buffer.append(this.host.toString());
-        return buffer.toString();
+        return this.schemeName + "://" + this.host.toString();
     }
 
 
